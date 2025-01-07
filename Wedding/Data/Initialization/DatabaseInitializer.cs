@@ -17,8 +17,8 @@ namespace Wedding.Data.Initialization {
                     Alias = "andrey-amina",
                     Groom = "Андрей",
                     Bride = "Амина",
-                    WeddingDate = new DateTime(2025, 07, 18, 14, 00, 0),
-                    Data = "18.07.2025 в 14:00",
+                    WeddingDate = new DateTime(2025, 07, 18, 16, 00, 0),
+                    Data = "18.07.2025 в 16:00",
                     Menu = "Меню разнообразно, поэтому сообщите нам заранее, если у вас есть какие-либо предпочтения или диетические ограничения. После подтверждения вы сможете пройти опрос о своих вкусовых предпочтениях и напитках.",
                     Wishes = "Дорогие гости! Мы создаем вечер, где детали становятся частью большой любви. Просим Вас оставить детей дома и присоединиться к нам, чтобы вместе написать новую страничку нашей истории.",
                     WishesSec = "Мы просим вас не дарить нам цветы, так как мы не успеем насладиться их красотой на все 100%. Мы будем признательны, если вы поможете нам осуществить мечту о путешествии, подарив ваши пожелания в конверте.",
@@ -34,11 +34,11 @@ namespace Wedding.Data.Initialization {
 
                     WeddingEvents = new List<WeddingEvent>(new WeddingEvent[] {
 
-                        new WeddingEvent{ Title = "Фуршет",Location = "Банкетный зал,  Маленькая Швейцария", Description = "Приглашаем вас угоститься и познакомиться со всеми гостями перед началом торжественного мероприятия", Time = new DateTime(2025, 07, 18, 14, 00, 0), Address = "Гайское ш., 1, Орск", MapData = "https://yandex.ru/map-widget/v1/?um=constructor%3Aa9fd7a52a48482064082cca5c82f07e7f4771fc16a212844bf89c70e474ae196&amp;source=constructor" },
+                        new WeddingEvent{ Title = "Фуршет",Location = "Банкетный зал,  Маленькая Швейцария", Description = "Приглашаем вас угоститься и познакомиться со всеми гостями перед началом торжественного мероприятия", Time = new DateTime(2025, 07, 18, 16, 00, 0), Address = "Гайское ш., 1, Орск", MapData = "https://yandex.ru/map-widget/v1/?um=constructor%3Aa9fd7a52a48482064082cca5c82f07e7f4771fc16a212844bf89c70e474ae196&amp;source=constructor" },
                        
-                        new WeddingEvent{ Title = "Выездная регистрация",Location = "Свадебная площадка,  Маленькая Швейцария" , Description = "Приглашаем вас разделить вместе с нами радость создания новой семьи", Time = new DateTime(2025, 07, 18, 14, 30, 0), Address = "Гайское ш., 1, Орск", MapData = "https://yandex.ru/map-widget/v1/?um=constructor%3Aa9fd7a52a48482064082cca5c82f07e7f4771fc16a212844bf89c70e474ae196&amp;source=constructor" },
+                        new WeddingEvent{ Title = "Выездная регистрация",Location = "Свадебная площадка,  Маленькая Швейцария" , Description = "Приглашаем вас разделить вместе с нами радость создания новой семьи", Time = new DateTime(2025, 07, 18, 16, 30, 0), Address = "Гайское ш., 1, Орск", MapData = "https://yandex.ru/map-widget/v1/?um=constructor%3Aa9fd7a52a48482064082cca5c82f07e7f4771fc16a212844bf89c70e474ae196&amp;source=constructor" },
 
-                        new WeddingEvent{ Title = "Банкет",Location = "Банкетный зал,  Маленькая Швейцария" , Description = "Приглашаем вас отменить наш праздник вместе за столом", Time = new DateTime(2025, 07, 18, 16, 00, 0), Address = "Гайское ш., 1, Орск", MapData = "https://yandex.ru/map-widget/v1/?um=constructor%3Aa9fd7a52a48482064082cca5c82f07e7f4771fc16a212844bf89c70e474ae196&amp;source=constructor" },
+                        new WeddingEvent{ Title = "Банкет",Location = "Банкетный зал,  Маленькая Швейцария" , Description = "Приглашаем вас отменить наш праздник вместе за столом", Time = new DateTime(2025, 07, 18, 17, 00, 0), Address = "Гайское ш., 1, Орск", MapData = "https://yandex.ru/map-widget/v1/?um=constructor%3Aa9fd7a52a48482064082cca5c82f07e7f4771fc16a212844bf89c70e474ae196&amp;source=constructor" },
 
                         new WeddingEvent{ Title = "Завершение вечера, праздничный салют",Location = "Уличная площадка,  Маленькая Швейцария" , Description = "Приглашаем вас отменить наш праздник вместе за столом", Time = new DateTime(2025, 07, 18, 22, 30, 0), Address = "Гайское ш., 1, Орск", MapData = "https://yandex.ru/map-widget/v1/?um=constructor%3Aa9fd7a52a48482064082cca5c82f07e7f4771fc16a212844bf89c70e474ae196&amp;source=constructor" },
 

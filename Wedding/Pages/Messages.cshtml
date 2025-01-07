@@ -1,0 +1,32 @@
+﻿@page "{weddingId:guid?}"
+@using Wedding.Models
+@model MessagesModel
+@{
+    ViewData["Title"] = "Список сообщений";
+}
+<div class="container">
+    <div class="row m-2 p-2">
+        <div class="col-12">
+            <h1 class="text-center doloman">Свадьба @Model.Groom и @Model.Bride</h1>
+            <h3 class="text-center">@Model.WeddingDate.ToString("dd.MM.yyyy")</h3>
+        </div>
+
+        @if (Model.Messages == null || Model.Messages.Count == 0) {
+            <p class="text-center display-3">Сообщений нет</p>
+        } else {
+            @foreach (GuestMessage message in Model.Messages) {
+                <div class="col-12 p-2 mb-2 border border-1 border-secundary lh-1">
+                    <p class="fs-4">@message.DateSending.ToString("dd.MM.yyyy  HH-mm")</p>
+                    <p class="fs-4">От: @message.Name</p>
+                    <p class="fs-4">@message.ConfirmationPresenceToText()</p>
+                    @if (!string.IsNullOrEmpty(message.FriendName)) {
+                        <p class="fs-4">Приду с: @message.FriendName</p>
+                    }
+                    @if (!string.IsNullOrEmpty(message.Comment)) {
+                        <p class="fs-4">@message.Comment</p>
+                    }
+                </div>
+            }
+        }
+    </div>
+</div>

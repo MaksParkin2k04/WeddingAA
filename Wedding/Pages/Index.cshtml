@@ -1,0 +1,307 @@
+﻿@page "{alias?}"
+@using Wedding.Models
+@model IndexModel
+@{
+
+}
+
+@* БЛОК НАША СВАДЬБА *@
+<div class="row p-3 mx-0 my-0 mt-4">
+    <div class="col-md-3 col-xxl-4"></div>
+
+    <div class="col d-flex flex-column align-items-center justify-content-center">
+        <h1 class="display-6 text-center mb-2 fw-semibold ">Наша свадьба</h1>
+    </div>
+
+    <div class="col-md-3 col-xxl-4"></div>
+</div>
+
+
+<div class="d-flex  flex-row justify-content-center mt-2">
+
+    @* БЛОК ИМЯ ЖЕНИХА И НЕВЕСТЫ *@
+    <div class="row p-3 mx-0 my-4 mt-4">
+        <div class="col-md-3 col-xxl-4"></div>
+
+        <div class="col d-flex flex-column align-items-center justify-content-center ">
+            <p class="display-5 lh-sm text-center fw-semibold ">@Model.Groom</p>
+            <p class="display-5 lh-sm text-center fw-italic">&</p>
+            <p class="display-5 lh-sm text-center fw-bold">@Model.Bride</p>
+            <p class="fs-2 text-center fw-italic">@Model.WeddingDate.ToText("dd.MM.yyyy")</p>
+        </div>
+
+        <div class="col-md-3 col-xxl-4"></div>
+    </div>
+
+    @* БЛОК ФОТО АУДИО *@
+    <div class="row p-3 mx-0 my-0 mt-0">
+        <div class="col-md-3 col-xxl-4"></div>
+
+        <div class="col d-flex flex-column align-items-center justify-content-center ">
+            <div class="position-relative">
+                <img src="~/@Model.Photo" class="" />
+                <div class="position-absolute top-0 start-50">
+                    <a id="audio-player-element" href="~/audio/MoT_-_Murashkami_75581648.mp3" class="btn btn-light btn-min-circle">
+                        <i class="fa-regular fa-circle-play fa-beat fa-2x " style="color: #102c54"></i>
+                    </a>
+                </div>
+                <p> </p>
+                <p class="text-end fs-6">18 июля 2025</p>
+                <p class="text-end fs-6">Ждем Вас!</p>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-xxl-4"></div>
+    </div>  
+
+</div>
+
+@* БЛОК ТАЙМЕР ОСТАЛОСЬ ДО СВАДЬБЫ *@
+<div class="row p-4 mx-0 my-4 background-block mt-4">
+    <div class="col-12">
+        <h2 class="display-4 text-center mb-5 text-dark">До свадьбы</h2>
+
+        <div id="timer-before-wedding" data-datetime="@Model.WeddingDate.TextValue" class="d-flex justify-content-center text-dark">
+            <div class="border border-2 border-white rounded-3 m-2 fs-1" style="width: 120px; height: 100px;">
+                <div id="day" class="text-center sample-font-large mt-4">0</div>
+                <div class="text-center align-bottom">дней</div>
+            </div>
+            <div class="border border-2 border-white rounded-3 m-2 fs-1" style="width: 120px; height: 100px;">
+                <div id="hour" class="text-center sample-font-large mt-4">0</div>
+                <div class="text-center align-bottom">часов</div>
+            </div>
+            <div class="border border-2 border-white rounded-3 m-2 fs-1" style="width: 120px; height: 100px;">
+                <div id="minutes" class="text-center sample-font-large mt-4">0</div>
+                <div class="text-center align-bottom">минут</div>
+            </div>
+            <div class="border border-2 border-white rounded-3 m-2 fs-1" style="width: 120px; height: 100px;">
+                <div id="second" class="text-center sample-font-large mt-4">0</div>
+                <div class="text-center align-bottom">секунд</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* БЛОК ИМЯ ЖЕНИХА И НЕВЕСТЫ *@
+<div class="row p-3 mx-0 my-4  mt-4">
+    <div class="col-md-3 col-xxl-4"></div>
+
+    <div class="col d-flex flex-column align-items-center justify-content-center">
+        <p class="text-center p-4"><i class="fa-solid fa-heart fa-beat display-6"></i></p>
+        <h2 class="display-4 text-center mb-5">Дорогой Гость!</h2>
+        <p class="text-center fs-5 ">@Model.Description</p>
+        <p class="text-center fs-5"><i> @Model.Data </i></p>
+    </div>
+
+    <div class="col-md-3 col-xxl-4"></div>
+</div>
+
+
+
+@*БЛОК МЕНЮ*@
+
+<div class="row p-3 mx-0 my-4 mt-4">
+    <div class="col-md-3 col-xxl-4"></div>
+
+    <div class="col d-flex flex-column align-items-center justify-content-center">
+        <h2 class="display-4 text-center mb-5">Меню</h2>
+        <p class="text-center fs-5">@Model.Menu</p>
+
+    </div>
+
+    <div class="col-md-3 col-xxl-4"></div>
+</div>
+
+
+@*ПОЖЕЛАНИЯ*@
+
+<div class="row p-3 mx-0 my-4 mt-4">
+    <div class="col-md-3 col-xxl-4"></div>
+
+    <div class="col d-flex flex-column align-items-center justify-content-center">
+        <h2 class="display-4 text-center mb-5">Пожелания</h2>
+        <p class="text-center fs-5">@Model.Wishes</p>
+        <p class="text-center fs-5">@Model.WishesSec</p>
+    </div>
+
+    <div class="col-md-3 col-xxl-4"></div>
+</div>
+
+
+
+@*БЛОК ПРИМЕЧАНИЕ*@
+
+<div class="row p-3 mx-0 my-4 mt-4">
+    <div class="col-md-3 col-xxl-4"></div>
+
+    <div class="col d-flex flex-column align-items-center justify-content-center">
+        <h2 class="display-4 text-center mb-5">Примечание</h2>
+        <p class="text-center fs-5">@Model.Info</p>
+
+    </div>
+
+    <div class="col-md-3 col-xxl-4"></div>
+</div>
+
+
+
+@*ФОТО ГОСТЕЙ*@
+
+<div class="row p-3 mx-0 my-4 mt-4">
+    <div class="col-md-3 col-xxl-4"></div>
+
+    <div class="col d-flex flex-column align-items-center justify-content-center">
+        <h2 class="display-4 text-center mb-5">Фото</h2>
+        <p class="text-center fs-5">@Model.PhotoPeople</p>
+  
+
+    </div>
+
+    <div class="col-md-3 col-xxl-4"></div>
+</div>
+
+
+<div class="row p-3 mx-0 my-4 mt-4">
+    <div class="col-md-3 col-xxl-4"></div>
+
+    <div class="col d-flex flex-column align-items-center justify-content-center">
+        <h2 class="display-4 text-center mb-5">Дресс-код</h2>
+
+        <p class=" text-center fs-5">Нам будет очень приятно, если в своих нарядах Вы поддержите нашу цветовую гамму свадьбы:</p>
+        <img src="~/images/wedding/загруженное-round.png" class="img-fluid" />
+    </div>
+
+    <div class="col-md-3 col-xxl-4"></div>
+</div>
+
+<p class="text-center p-1"><i class="fa-solid fa-heart fa-beat display-6"></i></p>
+
+
+@* БЛОК ТАЙМИНГ *@
+<div class="row p-3 mx-0 my-4 mt-4">
+    <div class="col-md-3 col-xxl-4"></div>
+
+    <div class="col d-flex flex-column align-items-center justify-content-center">
+        <h2 class="display-4 text-center mb-5">Свадебное расписание</h2>
+
+        <table class="table table-borderless text-center">
+            <tbody>
+                @foreach (WeddingEvent weddingEvent in Model.WeddingEvents)
+                {
+                    <tr>
+                        <td>
+                            <h4 class="fs-2">
+                                <a href="@weddingEvent.MapData" class="link-secondary">@weddingEvent.Time.ToString("HH:mm") @weddingEvent.Title</a>
+                            </h4>
+                            <p class="fs-5">@weddingEvent.Description</p>
+                            <p class="fs-5">@weddingEvent.Location</p>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col-md-3 col-xxl-4"></div>
+</div>
+
+
+
+@* БЛОК КАРТА *@
+<div class="row p-3 mx-0 my-4 mt-4">
+    <div class="col-md-3 col-xxl-4"></div>
+
+    <div class="col text-center">
+        <h2 class="display-4 text-center mb-5">Место</h2>
+
+        <p class="text-center fs-5">Для Вашего удобства прикрепляем карту. Надеемся, что Вы легко найдете место приведения Свадьбы и порадуете нас своим присутсвием!</p>
+    </div>
+    <div class="col-md-3 col-xxl-4"></div>
+</div>
+<div class="row mx-0 mb-4">
+    <iframe id="mapFrame"  src="" width="100%" height="350" frameborder="0" class="p-0 m-0" ></iframe>
+</div>
+
+<p class="text-center p-4"><i class="fa-solid fa-heart fa-beat display-6"></i></p>
+
+
+@*БЛОК ПОДТВЕРЖДЕНИЯ*@
+<div class="row p-3 mx-0 my-4 mt-4">
+    <div class="col-md-3 col-xxl-4"></div>
+
+    <div class="col d-flex flex-column align-items-center justify-content-center">
+        <h2 class="display-4 text-center mb-5">Подтверждение</h2>
+        <p class="text-center fs-5">@Model.Confirmation</p>
+
+    </div>
+
+    <div class="col-md-3 col-xxl-4"></div>
+</div>
+
+@*АНКЕТА*@
+
+<div class="row p-3 mx-0 my-4 mt-4">
+    <div class="col-md-3 col-xxl-4"></div>
+
+    <div class="col d-flex flex-column justify-content-center">
+        <h2 class="display-4 text-center mb-5">Анкета гостя</h2>
+
+        <p class="text-center fs-4">Пожалуйста, ответьте на несколько вопросов и подтвердите свое присутсвие.</p>
+        <div id="liveAlertPlaceholder"></div>
+        <form id="messageForm" asp-page="Index" method="post" enctype="application/x-www-form-urlencoded">
+            <input type="hidden" name="weddingid" value="@Model.WeddingId" />
+            <div class="mb-3">
+                <input id="name" name="name" type="text" class="form-control" placeholder="Ваше Имя и Фамилия" />
+            </div>
+            <div class="form-check">
+                <input id="firstRadio" name="confirmationpresence" class="form-check-input" type="radio" value="true" />
+                <label class="form-check-label" for="firstRadio">Приду</label>
+            </div>
+            <div class="form-check">
+                <input id="nextRadio" name="confirmationpresence" class="form-check-input" type="radio" value="false" />
+                <label class="form-check-label" for="nextRadio">Не смогу</label>
+            </div>
+            <div class="mb-3">
+                <input id="friendName" name="friendname" type="text" class="form-control" placeholder="Если будете с парой, просьба указать имя" />
+            </div>
+            <div class="mb-3">
+                <textarea id="comment" name="comment" class="form-control" placeholder="Если у Вас есть комментарии, напишите"></textarea>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Отправить" style="background-color:  #0F2C58; color:aliceblue" />
+        </form>
+    </div>
+
+    <div class="col-md-3 col-xxl-4"></div>
+</div>
+
+<p class="text-center p-1"><i class="fa-solid fa-heart fa-beat display-6"></i></p>
+<p class="text-center p-1 fs-5"><i> Ждем вас! </i></p>
+
+
+
+
+
+
+
+
+@* БЛОК КОНТАКТЫ ДЛЯ СВЯЗИ *@
+@* <div class="row p-3 mx-0 my-4 mt-4">
+    <div class="col-md-3 col-xxl-4"></div>
+
+    <div class="col d-flex flex-column align-items-center justify-content-center">
+        <h2 class="display-4 text-center mb-5">Контакты</h2>
+
+        <p class="text-center fs-5 ">Если у вас возникнут вопросы, просьба обращаться к нашему организатору.</p>
+        <p class="text-center fs-1 fw-bold">@Model.Planner.Name</p>
+        <p class="text-center fs-1 fw-bold">@Model.Planner.Surname</p>
+        <p class="text-center fs-4 fw-bold">@Model.Planner.Phone</p>
+    </div>
+
+    <div class="col-md-3 col-xxl-4"></div>
+</div> *@
+
+
+
+
+
+
